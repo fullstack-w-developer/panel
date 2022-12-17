@@ -63,6 +63,7 @@ function App(props: CustomAppProps) {
             <QueryClientProvider client={queryClient}>
                 <GlobalContextProvider>
                     <ThemeWrapper emotionCache={emotionCache} locale={locale}>
+                        {/* @ts-ignore */}
                         {getLayout(<Component {...pageProps} />)}
                         <GlobalLoader />
                     </ThemeWrapper>
@@ -76,5 +77,5 @@ function App(props: CustomAppProps) {
         </Fragment>
     );
 }
-
+// @ts-ignore
 export default appWithTranslation(App, nextI18nConfig);

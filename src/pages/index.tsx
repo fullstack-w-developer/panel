@@ -2,29 +2,32 @@ import ImagesSlider from "@/components/global/ImagesSlider";
 import ServicesSection from "@/components/global/ServicesSection";
 import HeroSlider from "@/components/global/HeroSlider";
 import { getLayout } from "@/components/layouts/PageLayout";
-import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import {
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+} from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Banners from "@/components/global/Banners";
 import LatestPosts from "@/components/post/LatestPosts";
 import {
-    getBanners,
-    getBrands,
-    getCustomers,
-    getInit,
-    getSlides,
+  getBanners,
+  getBrands,
+  getCustomers,
+  getInit,
+  getSlides,
 } from "@/services/other";
 import { getPosts } from "@/services/post";
 import { NextSeo } from "next-seo";
 import { getPageTitle } from "@/helpers/utils";
-
+import serverRoutes from "@/helpers/routes/server-routes";
+import axios from "axios";
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
-    const [slides, brands, customers, posts, banners, init] = await Promise.all(
+    const [slides, brands, customers, banners, init] = await Promise.all(
         [
             getSlides(),
             getBrands(),
             getCustomers(),
-            getPosts({ limit: 3 }),
             getBanners(),
             getInit(),
         ]
@@ -37,7 +40,7 @@ export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
             brands,
             customers,
             slides,
-            posts,
+        
             banners,
             init,
             ...translations,
@@ -48,11 +51,11 @@ export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
 
 type IndexPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-const IndexPage = (props: IndexPageProps) => {
-    const { slides, brands, customers, posts, banners, init } = props;
-    return (
-        <Fragment>
-            <NextSeo title={getPageTitle(init.name, "صفحه اصلی")} />
+const IndexPage = (props:IndexPageProps) => {
+  const { slides, brands, customers, banners, init } = props;
+  return (
+    <Fragment>
+      <NextSeo title={getPageTitle(init.name, "صفحه اصلی")} />
             <HeroSlider slides={slides} />
             <section
                 className="bg-cover"
@@ -63,9 +66,9 @@ const IndexPage = (props: IndexPageProps) => {
             </section>
             <Banners banners={banners} />
             <ImagesSlider title="همکاران ما" slides={customers} />
-            <LatestPosts posts={posts.data} />
-        </Fragment>
-    );
+            <LatestPosts posts={[]} />
+    </Fragment>
+  );
 };
 
 IndexPage.getLayout = getLayout;

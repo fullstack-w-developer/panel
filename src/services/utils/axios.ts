@@ -21,7 +21,7 @@ const axios = _axios.create({
 axios.interceptors.request.use(
     function (config) {
         if (shouldUseMock(config.useMock)) {
-            config.baseURL = mockUrl;
+            config.baseURL = mainUrl;
         } else {
             config.baseURL = mainUrl;
         }
