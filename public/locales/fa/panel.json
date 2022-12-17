@@ -1,0 +1,56 @@
+{
+    "titles": {
+        "dashboard": "اطلاعات کاربری",
+        "favorites": "علاقه‌مندی ها",
+        "register-agency": "ثبت نام نمایندگان",
+        "signout": "خروج"
+    },
+    "dashboard": {
+        "profile_update_form": {
+            "hint": "لطفا اطلاعات هویتی خود را بصورت کامل وارد کنید",
+            "first_name": "نام",
+            "last_name": "نام خانوادگی",
+            "email": "آدرس ایمیل",
+            "mobile": "شماره موبایل",
+            "birthday": "تاریخ تولد",
+            "national_code": "کد ملی",
+            "submit": "ویرایش اطلاعات"
+        },
+        "register_agency_form": {
+            "already_requested": "فرم درخواست شما در دست بررسی است در اسرع وقت با شما تماس خواهیم گرفت",
+            "hint": "جهت ثبت نام برای دریافت نمایندگی فرم زیر را تکمیل کنید",
+            "fields": {
+                "name": "نام و نام خانوادگی",
+                "email": "آدرس ایمیل",
+                "phone": "شماره تماس",
+                "address": "آدرس",
+                "cv": "توضیحات"
+            },
+            "submit": "ارسال درخواست نمایندگی"
+        },
+        "password_update_form": {
+            "hint": "درصورتی که میخواهید رمز عبور خود را بروزرسانی کنید فیلدهای زیر را تکمیل کنید",
+            "old_password": "رمز عبور قبلی",
+            "new_password": "رمز عبور جدید",
+            "repeat_new_password": "تکرار رمز عبور جدید",
+            "submit": "بروزرسانی رمز عبور"
+        }
+    },
+    "order": {
+        "table": {
+            "code": "کد سفارش",
+            "date": "تاریخ سفارش",
+            "status": "وضعیت سفارش",
+            "sum": "جمع کل"
+        },
+        "statuses": {
+            "waiting_for_verification": "در انتظار تایید",
+            "verified": "تایید شده",
+            "ready_to_send": "آماده ارسال",
+            "sent": "ارسال شده",
+            "received": "دریافت شده",
+            "canceled": "لغو شده",
+            "unsuccessful": "ناموفق"
+        }
+    }
+}

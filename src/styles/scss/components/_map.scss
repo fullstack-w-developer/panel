@@ -1,0 +1,33 @@
+.map-container {
+    svg {
+        path {
+            stroke: $white;
+            stroke-width: 2px;
+            fill: $primary;
+            transition: 0.1s;
+            cursor: pointer;
+            &:hover {
+                fill: $red;
+            }
+            &:focus,
+            &:visited,
+            &:focus-visible {
+                outline: none !important;
+            }
+        }
+    }
+    .map-tooltip {
+        &:after {
+            background-color: $white;
+            position: absolute;
+            bottom: 0rem;
+            border-radius: 0.4rem;
+            right: calc(50% - 5px);
+            transform: rotate(45deg) translateX(50%);
+            width: 2rem;
+            height: 2rem;
+            z-index: -1;
+            content: "";
+        }
+    }
+}

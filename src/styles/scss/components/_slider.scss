@@ -1,0 +1,46 @@
+.slider-primary {
+    position: relative;
+    @include media-breakpoint-down(sm) {
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        background-color: $white;
+        border-radius: 100rem;
+        width: 3rem;
+        height: 3rem;
+        box-shadow: 0px 0px 14px -2px rgba($black, 0.3);
+        &::after {
+            font-size: 1.2rem;
+        }
+    }
+    .swiper-button-next {
+        [dir="rtl"] & {
+            left: 1rem;
+            right: auto;
+            &::after {
+                transform: scale(-1);
+            }
+        }
+        [dir="ltr"] & {
+            right: 1rem;
+            left: auto;
+        }
+    }
+    .swiper-button-prev {
+        [dir="rtl"] & {
+            right: 1rem;
+            left: auto;
+            &::after {
+                transform: scale(-1);
+            }
+        }
+        [dir="ltr"] & {
+            left: 1rem;
+            right: auto;
+        }
+    }
+}

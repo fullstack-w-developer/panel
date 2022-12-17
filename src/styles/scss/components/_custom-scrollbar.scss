@@ -1,0 +1,15 @@
+.custom-scrollbar {
+    &__track {
+        background-color: #f8f8f8;
+        width: 10px !important;
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+        > * {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 6px !important;
+            border-radius: 100px !important;
+            background-color: rgba($primary, 0.7) !important;
+        }
+    }
+}
