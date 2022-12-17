@@ -7,7 +7,7 @@ import {
   InferGetStaticPropsType,
 } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import Banners from "@/components/global/Banners";
 import LatestPosts from "@/components/post/LatestPosts";
 import {
@@ -17,11 +17,8 @@ import {
   getInit,
   getSlides,
 } from "@/services/other";
-import { getPosts } from "@/services/post";
 import { NextSeo } from "next-seo";
 import { getPageTitle } from "@/helpers/utils";
-import serverRoutes from "@/helpers/routes/server-routes";
-import axios from "axios";
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
     const [slides, brands, customers, banners, init] = await Promise.all(
         [
