@@ -1,5 +1,4 @@
-import { mainUrl, shouldUseFaker } from "@/helpers/env-variables";
-import { shouldUseMock } from "@/helpers/utils";
+import { mainUrl } from "@/helpers/env-variables";
 import _axios from "axios";
 
 declare module "axios" {
@@ -10,7 +9,6 @@ declare module "axios" {
 
 const headers = { "Content-Type": "application/json" };
 
-const useMock = shouldUseFaker === "mixed" || shouldUseFaker === false;
 // @ts-ignore
 const axios = _axios.create({
     headers,
