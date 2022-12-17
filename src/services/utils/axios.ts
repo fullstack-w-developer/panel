@@ -1,4 +1,4 @@
-import { mainUrl, mockUrl, shouldUseFaker } from "@/helpers/env-variables";
+import { mainUrl, shouldUseFaker } from "@/helpers/env-variables";
 import { shouldUseMock } from "@/helpers/utils";
 import _axios from "axios";
 
